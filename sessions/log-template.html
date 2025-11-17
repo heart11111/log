@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D 세션 로그 - [세션 제목]</title>
+    <link rel="stylesheet" href="../css/foundry-log.css">
+    <style>
+        /* 페이지 전체 레이아웃 */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 세션 헤더 */
+        .session-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 0;
+        }
+
+        .session-title {
+            font-size: 2em;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .session-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .session-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* 로그 컨테이너 */
+        .log-container {
+            background: white;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        /* 네비게이션 */
+        .nav-back {
+            margin-bottom: 20px;
+        }
+
+        .nav-back a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-back a:hover {
+            color: #764ba2;
+        }
+
+        /* 채팅 로그 래퍼 */
+        #df-chat-log {
+            background: #fafafa;
+            border-radius: 8px;
+            max-height: none;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="nav-back">
+            <a href="../index.html">← 세션 목록으로 돌아가기</a>
+        </div>
+
+        <div class="session-header">
+            <h1 class="session-title">세션 #001 - [세션 제목을 입력하세요]</h1>
+            <div class="session-meta">
+                <span>📅 날짜: 2025-01-01</span>
+                <span>🎲 DM: [DM 이름]</span>
+                <span>👥 참가자: [플레이어 목록]</span>
+            </div>
+        </div>
+
+        <div class="log-container">
+            <!--
+                여기에 Foundry VTT에서 내보낸 채팅 로그 HTML을 붙여넣으세요.
+                <ol id="df-chat-log"> ... </ol> 형식의 HTML입니다.
+
+                사용 방법:
+                1. Foundry VTT에서 채팅 로그를 HTML로 내보내기
+                2. 내보낸 파일을 열어서 <ol id="df-chat-log">...</ol> 부분을 복사
+                3. 아래에 붙여넣기
+            -->
+
+            <ol id="df-chat-log">
+                <!-- 예시 메시지 - 실제 로그로 교체하세요 -->
+                <li class="chat-message message flexcol" data-message-id="example1" style="border-color: rgb(81, 84, 169);">
+                    <header class="message-header flexrow">
+                        <h4 class="message-sender">Gamemaster</h4>
+                        <span class="message-metadata">
+                            <time class="message-timestamp">2025-01-01</time>
+                        </span>
+                    </header>
+                    <div class="message-content">
+                        모험이 시작됩니다...
+                    </div>
+                </li>
+
+                <li class="chat-message message flexcol" data-message-id="example2" style="border-color: rgb(40, 197, 204);">
+                    <header class="message-header flexrow">
+                        <h4 class="message-sender">
+                            <a class="avatar">
+                                <img src="../css/default-avatar.png" alt="플레이어">
+                            </a>
+                            플레이어 1
+                        </h4>
+                        <span class="message-metadata">
+                            <time class="message-timestamp">2025-01-01</time>
+                        </span>
+                    </header>
+                    <div class="message-content">
+                        준비됐습니다!
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

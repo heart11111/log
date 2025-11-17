@@ -1,0 +1,422 @@
+/* Foundry VTT 채팅 로그 스타일 (heartbackup.exe 스타일 재현) */
+
+/* 폰트 import */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap');
+
+/* 전역 스타일 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Pretendard-Regular, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+#df-chat-log {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 기본 메시지 컨테이너 */
+.message {
+    padding: 0px 5px 6px 45px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    position: relative;
+    line-height: 1.25em;
+    font-size: 16px;
+    min-height: 36px;
+}
+
+/* 일반 메시지 (플레이어) */
+.message.general {
+    color: #3f3f3f;
+}
+
+.message.general.you {
+    background: #dddddd;
+    color: #404040;
+}
+
+/* 시스템 메시지 */
+.message.general.system {
+    background-color: rgba(45, 45, 45, 0);
+    color: #9b9b9b;
+}
+
+/* 설명 메시지 */
+.message.desc {
+    padding: 0px 5px 6px 15px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(241, 241, 241, 0);
+    color: #404040;
+}
+
+/* 귓속말 메시지 */
+.message.private.whisper {
+    background-color: #f2f5d3;
+    color: #404040;
+}
+
+.message.private.whisper .spacer {
+    background-color: #f0f092;
+}
+
+/* 에러 메시지 */
+.message.error {
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    background-color: #FFABAB;
+    color: #000000;
+    max-width: 200px;
+}
+
+/* 구분선 */
+.spacer {
+    padding: 0px;
+    margin: 0px -5px 8px -45px;
+    border: none;
+    outline: none;
+    background-color: #e1e1e1;
+    height: 1px;
+}
+
+.message.desc .spacer {
+    margin: 0px -5px 8px -15px;
+    background-color: #ddd;
+}
+
+/* 아바타 */
+.avatar {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0.2rem;
+    left: 5px;
+    width: 28px;
+    height: 28px;
+    align-items: stretch;
+}
+
+.avatar img {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 0%;
+}
+
+/* 발신자 이름 */
+.by,
+.message-sender {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    left: -5px;
+    vertical-align: top;
+}
+
+/* 메시지 헤더 */
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 45px;
+    position: relative;
+}
+
+.message-metadata {
+    font-size: 11px;
+    color: #999;
+}
+
+.message-timestamp {
+    margin-right: 8px;
+}
+
+.message-delete {
+    opacity: 0.3;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    color: #666;
+}
+
+.message-delete:hover {
+    opacity: 1;
+}
+
+/* 메시지 내용 */
+.message-content {
+    padding: 5px 10px 8px 45px;
+}
+
+/* 주사위 롤 인라인 결과 */
+.inlinerollresult,
+.inline-roll.inline-result {
+    padding: 2px 5px;
+    margin: 0px;
+    border: 1px solid #999999;
+    outline: none;
+    background: rgba(255, 255, 255, 0.4);
+    font-weight: bolder;
+    cursor: help;
+    font-size: 1.1em;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* 주사위 롤 카드 스타일 */
+.sheet-rolltemplate-custom {
+    padding: 0px;
+    margin: 0px;
+    border-width: 10px 0px;
+    outline: none;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.sheet-rtw {
+    padding: 12px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 0px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sheet-rth {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
+}
+
+.sheet-rth span {
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.sheet-rtb {
+    padding: 0px;
+    margin: 4px 0px 0px;
+    border-top: 1px solid #dbdbdb;
+    outline: none;
+}
+
+/* 주사위 결과 설명 */
+.sheet-desc {
+    padding: 5px 0px 2px;
+    margin: 0px;
+    border: none;
+    outline: none;
+    color: #b2b2b2;
+    font-size: 11px;
+}
+
+/* 주사위 결과 값 */
+.sheet-result {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
+}
+
+.sheet-result span {
+    font-family: Fraunces, serif;
+    padding: 2px 5px;
+    margin: 0px;
+    border: 0px;
+    outline: none;
+    background: transparent;
+    font-weight: bold;
+    cursor: help;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* 데미지 박스 */
+.sheet-dmg {
+    padding: 3px;
+    margin: 2px 0px 0px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+}
+
+/* 태그 스타일 */
+.sheet-tag {
+    padding: 1px 5px;
+    margin: 4px 0px 0px;
+    border: none;
+    outline: none;
+    display: inline-block;
+    background-color: #333333;
+    border-radius: 2px;
+    font-size: 11px;
+    color: white;
+    margin-right: 3px;
+}
+
+.sheet-tag.sheet-hl {
+    background-color: #333333;
+}
+
+.sheet-tag:not(.sheet-tag.sheet-hl):not(.sheet-tag:first-child) {
+    background-color: #dbdbdb;
+    color: #333;
+}
+
+/* HP 메시지 스타일 */
+.hm-message {
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 4px 0;
+}
+
+.hm-message.hp-plus {
+    background-color: #d4edda;
+    border-left: 3px solid #28a745;
+}
+
+.hm-message.hp-minus {
+    background-color: #f8d7da;
+    border-left: 3px solid #dc3545;
+}
+
+.hm-message span {
+    font-weight: bold;
+}
+
+.hm-message div {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* 턴 공지 */
+.turn-announcer {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    border-left: 4px solid #007bff;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+/* 챗 카드 (foundry 기본 스타일) */
+.chat-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.flavor-text {
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+/* Flexbox 레이아웃 */
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flexcol {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 연속 메시지 그룹화 (같은 발신자) */
+.chat-message.dfce-cm-top {
+    margin-top: 12px;
+}
+
+.chat-message.dfce-cm-middle {
+    margin-top: 2px;
+}
+
+.chat-message.dfce-cm-bottom {
+    margin-bottom: 12px;
+}
+
+/* 귓속말 표시 */
+.whisper-to {
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+}
+
+/* IC (In Character) 메시지 */
+.ic {
+    border-left: 3px solid #007bff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    #df-chat-log {
+        max-width: 100%;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .message-header {
+        padding: 5px 10px 5px 40px;
+    }
+
+    .message-content {
+        padding: 5px 10px 8px 40px;
+    }
+}
+
+/* 스크롤바 스타일 */
+#df-chat-log::-webkit-scrollbar {
+    width: 8px;
+}
+
+#df-chat-log::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#df-chat-log::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#df-chat-log::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

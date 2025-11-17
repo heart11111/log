@@ -1,0 +1,9 @@
+# PyInstaller 추출 파일
+*.exe_extracted/
+
+# 임시 파일
+*.tmp
+*.log
+
+# 개발용 exe 파일 (필요시 main 브랜치에만 유지)
+*.exe
