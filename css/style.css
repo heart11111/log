@@ -1,0 +1,288 @@
+/* D&D 세션 로그 스타일시트 */
+
+:root {
+    --parchment: #f4e8d0;
+    --dark-brown: #3d2817;
+    --medium-brown: #6b4423;
+    --gold: #d4af37;
+    --dark-gold: #b8941f;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --light-shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: var(--dark-brown);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--parchment);
+    box-shadow: 0 10px 50px var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 헤더 */
+.header {
+    background: linear-gradient(135deg, var(--medium-brown) 0%, var(--dark-brown) 100%);
+    color: var(--parchment);
+    padding: 40px 30px;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* 네비게이션 */
+.nav {
+    background: var(--dark-brown);
+    padding: 15px 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--parchment);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: var(--medium-brown);
+    color: var(--gold);
+}
+
+.nav-link.active {
+    background: var(--gold);
+    color: var(--dark-brown);
+}
+
+/* 메인 콘텐츠 */
+.content {
+    padding: 40px 30px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+}
+
+h3 {
+    font-size: 1.4em;
+    color: var(--medium-brown);
+    margin-bottom: 10px;
+}
+
+/* 환영 섹션 */
+.welcome-section {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--gold);
+}
+
+.welcome-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* 세션 그리드 */
+.session-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.session-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--light-shadow);
+    border: 2px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.session-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+.session-date {
+    color: var(--medium-brown);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.session-summary {
+    margin: 15px 0;
+    color: var(--dark-brown);
+    line-height: 1.6;
+}
+
+/* 버튼 */
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark-brown);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: var(--dark-gold);
+    transform: scale(1.05);
+}
+
+/* 정보 박스 */
+.info-box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--medium-brown);
+    box-shadow: 0 2px 8px var(--light-shadow);
+}
+
+.info-box p {
+    margin: 10px 0;
+    font-size: 1.05em;
+}
+
+/* 세션 로그 페이지 스타일 */
+.session-header {
+    background: linear-gradient(135deg, var(--medium-brown) 0%, var(--dark-brown) 100%);
+    color: var(--parchment);
+    padding: 30px;
+    margin: -40px -30px 30px -30px;
+    border-bottom: 4px solid var(--gold);
+}
+
+.session-title {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.session-meta {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+.session-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 로그 섹션 */
+.log-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--light-shadow);
+}
+
+.log-section h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* 하이라이트 박스 */
+.highlight {
+    background: #fff9e6;
+    border-left: 4px solid var(--gold);
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.combat {
+    background: #ffe6e6;
+    border-left: 4px solid #c41e3a;
+}
+
+.roleplay {
+    background: #e6f3ff;
+    border-left: 4px solid #4a90e2;
+}
+
+.note {
+    background: #f0e6ff;
+    border-left: 4px solid #9b59b6;
+}
+
+/* 풋터 */
+.footer {
+    background: var(--dark-brown);
+    color: var(--parchment);
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8em;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .session-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .session-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
