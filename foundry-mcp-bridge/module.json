@@ -1,0 +1,11 @@
+{
+  "id": "mcp-bridge",
+  "title": "MCP Bridge",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "esmodules": ["scripts/mcp-bridge.js"],
+  "description": "Bridge Foundry VTT data to MCP servers"
+}
